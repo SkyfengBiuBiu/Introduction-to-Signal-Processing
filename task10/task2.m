@@ -1,0 +1,10 @@
+Wp=4000/40000;
+Ws=7000/40000;
+Rp=0.3;
+Rs=45;
+[N,Wn]=buttord(2*Wp,2*Ws,Rp,Rs);
+[a,b]=butter(N,Wn);
+ figure,impz(a,b);
+ figure,freqz(a,b);
+ [z,p,K] = butter(N,Wn);
+ figure,zplane(z,p);
